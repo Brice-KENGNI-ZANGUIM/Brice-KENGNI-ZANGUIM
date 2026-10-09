@@ -49,6 +49,18 @@ complete software and applications, from the first model to the interface people
   </tr>
   <tr>
     <td width="50%" valign="top">
+      <b>GCLSTM</b> <sub>(private repository)</sub><br/>
+      <sub>A Python package to define and train a model that couples a graph neural network block with an improved LSTM layer.</sub><br/>
+      <img src="https://img.shields.io/badge/-Python-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python"/> <img src="https://img.shields.io/badge/-GNN-1E3A8A?style=flat-square" alt="GNN"/> <img src="https://img.shields.io/badge/-LSTM-0EA5E9?style=flat-square" alt="LSTM"/>
+    </td>
+    <td width="50%" valign="top">
+      <b>Banking and microfinance management</b> <sub>(private repository)</sub><br/>
+      <sub>Two Python applications: one runs the operations of a bank, the other manages a microfinance institution.</sub><br/>
+      <img src="https://img.shields.io/badge/-Python-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python"/>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top">
       <a href="https://github.com/Brice-KENGNI-ZANGUIM/Images_segmentation_BKZ"><b>Semantic segmentation for autonomous driving</b></a><br/>
       <sub>U-Net, PSPNet and LinkNet compared on street scenes, with data augmentation, served through a FastAPI and Streamlit app.</sub><br/>
       <img src="https://img.shields.io/badge/-Keras-D00000?style=flat-square&logo=keras&logoColor=white" alt="Keras"/> <img src="https://img.shields.io/badge/-FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white" alt="FastAPI"/> <img src="https://img.shields.io/badge/-Docker-2496ED?style=flat-square&logo=docker&logoColor=white" alt="Docker"/>
@@ -111,6 +123,8 @@ l'interface que l'on utilise.
 | --- | --- |
 | LANGIAL | Une place numérique pour les langues d'Afrique, à l'écrit et à l'oral ; clavier ngiemboon dédié. |
 | LECTRA | Synthèse vocale en 31 langues et transcription en 99 langues, entièrement sur la machine de l'utilisateur. |
+| GCLSTM | Un paquet Python pour définir et entraîner un modèle qui associe un bloc de réseau de neurones sur graphe à une couche LSTM améliorée. |
+| Gestion bancaire et microfinance | Deux applications Python : les opérations d'une banque, et la gestion d'une microfinance. |
 | Segmentation pour la conduite autonome | U-Net, PSPNet et LinkNet comparés sur des scènes de rue, servis par FastAPI et Streamlit. |
 | Recommandation de livres sans serveur | Fonction Azure, chaîne CI/CD, interface Streamlit, variante AWS sous Docker. |
 | Agent de réservation de vols | Agent conversationnel bâti sur Microsoft Bot Framework, conteneurisé. |
