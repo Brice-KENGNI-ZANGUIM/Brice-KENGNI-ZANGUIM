@@ -17,7 +17,7 @@
 
 <img src="assets/separateur.svg" width="100%" alt=""/>
 
-## About
+<p align="center"><img src="assets/titre-about.svg" alt="About" width="100%"/></p>
 
 I work where **theoretical physics** meets **machine learning**: quantum magnetism, spin models and
 exchange interactions on one side, deep learning and data on the other. I also design and ship
@@ -32,7 +32,9 @@ complete software and applications, from the first model to the interface people
   </tr>
 </table>
 
-## Selected work
+<img src="assets/separateur.svg" width="100%" alt=""/>
+
+<p align="center"><img src="assets/titre-work.svg" alt="Selected work" width="100%"/></p>
 
 <table>
   <tr>
@@ -97,7 +99,9 @@ complete software and applications, from the first model to the interface people
   </tr>
 </table>
 
-## All repositories
+<img src="assets/separateur.svg" width="100%" alt=""/>
+
+<p align="center"><img src="assets/titre-repos.svg" alt="All repositories" width="100%"/></p>
 
 <table>
   <tr><th align="left">Repository</th><th align="left">Purpose</th><th align="left">Stack</th></tr>
@@ -135,13 +139,23 @@ complete software and applications, from the first model to the interface people
   <tr><td><a href="https://github.com/Brice-KENGNI-ZANGUIM/Introduction-to-Github">Introduction-to-Github</a></td><td>My first steps with GitHub</td><td><img src="https://img.shields.io/badge/-Python-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python"/></td></tr>
 </table>
 
-## Toolbox
+<img src="assets/separateur.svg" width="100%" alt=""/>
+
+<p align="center"><img src="assets/titre-toolbox.svg" alt="Toolbox" width="100%"/></p>
 
 <p align="center">
-  <img src="https://skillicons.dev/icons?i=python,rust,pytorch,tensorflow,sklearn,latex,linux,bash,docker,azure,aws,fastapi,js,git&perline=14&theme=dark" alt="Toolbox"/>
+  <img src="assets/orbite.svg" alt="Python, Rust, PyTorch, LaTeX, NumPy, SciPy, scikit-learn, TensorFlow, SLURM, Linux, Docker, Azure, AWS, FastAPI, Streamlit, Git, Bash, JavaScript" width="100%"/>
 </p>
 
-## Activity
+<img src="assets/separateur.svg" width="100%" alt=""/>
+
+<p align="center"><img src="assets/titre-kpi.svg" alt="In numbers" width="100%"/></p>
+
+<p align="center">
+  <img src="assets/kpi.svg" alt="Key figures" width="100%"/>
+</p>
+
+<p align="center"><img src="assets/titre-activity.svg" alt="Activity" width="100%"/></p>
 
 <p align="center">
   <img src="https://github-readme-stats.vercel.app/api?username=Brice-KENGNI-ZANGUIM&show_icons=true&hide_rank=true&hide=prs,issues,contribs&include_all_commits=true&count_private=true&bg_color=0B1220&title_color=22D3EE&icon_color=22D3EE&text_color=E8ECF3&border_color=1E3A8A&border_radius=10" alt="GitHub statistics" width="49%"/>

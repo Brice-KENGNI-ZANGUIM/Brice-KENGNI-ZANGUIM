@@ -30,19 +30,21 @@ Le workflow « Métriques du profil » lit votre activité par l'API de GitHub.
 3. Copiez le jeton, puis dans le dépôt `Brice-KENGNI-ZANGUIM` : Settings > Secrets and variables >
    Actions > « New repository secret », nom `METRICS_TOKEN`, valeur : le jeton.
 
-## 4. Lancer les deux workflows une première fois
+## 4. Lancer les trois workflows une première fois
 
 Dépôt `Brice-KENGNI-ZANGUIM` > onglet Actions :
 
 - « Métriques du profil » > « Run workflow » : écrit `metrics/general.svg` (calendrier de l'année,
   langages, habitudes de travail, distinctions) ;
 - « Animation des contributions » > « Run workflow » : crée la branche `output` avec l'animation du
-  calendrier, en thème clair et en thème sombre.
+  calendrier, en thème clair et en thème sombre ;
+- « Indicateurs du profil » > « Run workflow » : relève vos dépôts (privés compris), vos langages,
+  vos années sur GitHub et toutes vos contributions, puis redessine le panneau « In numbers ».
 
 Si un workflow échoue sur un refus d'écriture : Settings > Actions > General > Workflow permissions >
 « Read and write permissions ».
 
-Ensuite, les deux se relancent seuls chaque nuit (3 h 17 et 3 h 41, heure UTC).
+Ensuite, les trois se relancent seuls chaque nuit (3 h 17, 3 h 41 et 4 h 05, heure UTC).
 
 ## 5. Modifier
 
@@ -56,6 +58,12 @@ Ensuite, les deux se relancent seuls chaque nuit (3 h 17 et 3 h 41, heure UTC).
 - **Le courriel** : le badge « Contact » ; retirez la ligne pour ne pas l'exposer.
 - **Épingler** : sur votre profil, « Customize your pins », pour mettre en avant six dépôts sous
   le README.
+
+## Les images dessinées pour ce profil
+
+Le bandeau, les titres de section, les icônes des domaines, l'orbite des outils, le panneau des
+indicateurs, le séparateur et le pied sortent tous de `outils/dessiner.py`. Pour changer un texte ou
+une couleur : modifier ce fichier, lancer `python3 outils/dessiner.py`, commiter `assets/`.
 
 ## Ce que chaque image appelle
 

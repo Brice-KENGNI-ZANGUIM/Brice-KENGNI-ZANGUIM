@@ -181,10 +181,125 @@ def pied(cible, L=1200, H=120):
         'Brice Kengni Zanguim  |  quantum magnetism and machine learning</text></svg>', encoding="utf-8")
 
 
+def titre(cible, texte, sous=""):
+    """Un titre de section : il s'ecrit de gauche a droite, un spin tourne a cote, un trait le balaie."""
+    L, H = 1000, 72
+    largeur = 30 + len(texte) * 17
+    cible.write_text(
+        f'<svg xmlns="http://www.w3.org/2000/svg" width="{L}" height="{H}" viewBox="0 0 {L} {H}" role="img" aria-label="{texte}">'
+        f'<defs><linearGradient id="g" x1="0" x2="1"><stop offset="0" stop-color="{CYAN}" stop-opacity="0"/>'
+        f'<stop offset="0.5" stop-color="{CYAN}"/><stop offset="1" stop-color="{CYAN}" stop-opacity="0"/></linearGradient>'
+        f'<clipPath id="r"><rect class="r" x="60" y="0" width="{largeur + 20}" height="{H}"/></clipPath></defs>'
+        '<style>.r{transform-box:fill-box;transform-origin:left;animation:r 1.3s cubic-bezier(.2,.7,.2,1) forwards;transform:scaleX(0)}'
+        '@keyframes r{to{transform:scaleX(1)}}'
+        '.s{transform-box:fill-box;transform-origin:center;animation:s 5s linear infinite}@keyframes s{to{transform:rotate(360deg)}}'
+        '.b{animation:b 3.8s ease-in-out infinite}@keyframes b{0%{transform:translateX(-260px)}100%{transform:translateX(1000px)}}'
+        '.c{animation:c 1s steps(2,start) infinite}@keyframes c{to{opacity:0}}'
+        '@media (prefers-reduced-motion:reduce){.r{animation:none;transform:none}.s,.b,.c{animation:none}}</style>'
+        f'<rect x="0.5" y="0.5" width="{L - 1}" height="{H - 1}" rx="14" fill="{NUIT}" stroke="{MARINE}"/>'
+        f'<circle cx="34" cy="{H / 2}" r="17" fill="{ABYSSE}" stroke="{CYAN}" stroke-opacity="0.6" stroke-width="1.5"/>'
+        f'<g class="s">{fleche(34, H / 2, 22, CYAN, 2.2)}</g>'
+        f'<g clip-path="url(#r)"><text x="66" y="{H / 2 + 10}" font-family="{POLICE}" font-size="28" font-weight="700" '
+        f'fill="{TEXTE}" letter-spacing="0.5">{texte}</text></g>'
+        f'<rect class="c" x="{66 + largeur - 14}" y="{H / 2 - 13}" width="3" height="26" fill="{CYAN}"/>'
+        + (f'<text x="{L - 24}" y="{H / 2 + 6}" text-anchor="end" font-family="{POLICE}" font-size="15" fill="{DOUX}">{sous}</text>' if sous else '')
+        + f'<rect x="0" y="{H - 3}" width="{L}" height="1" fill="{MARINE}"/>'
+        f'<rect class="b" x="0" y="{H - 4}" width="260" height="3" fill="url(#g)"/></svg>', encoding="utf-8")
+
+
+def kpi(cible, valeurs):
+    """Le panneau des indicateurs : quatre tuiles, un anneau qui se remplit, le chiffre qui monte."""
+    L, H = 1000, 190
+    tuiles = [(f"{valeurs['depots']}", "repositories", "dépôts"),
+              (f"{valeurs['langages']}", "languages", "langages"),
+              (f"{valeurs['annees']}+", "years on GitHub", "années sur GitHub"),
+              (f"{valeurs['contributions']:,}".replace(",", " "), "contributions", "contributions")]
+    r, tour = 44, 2 * 3.14159 * 44
+    corps = []
+    for k, (n, en, fr) in enumerate(tuiles):
+        x0 = 12 + k * 247
+        cx, cy = x0 + 70, 95
+        d = 0.25 * k
+        corps.append(
+            f'<rect x="{x0}" y="12" width="235" height="{H - 24}" rx="14" fill="{ABYSSE}" stroke="{MARINE}"/>'
+            f'<circle cx="{cx}" cy="{cy}" r="{r}" fill="none" stroke="{MARINE}" stroke-width="7"/>'
+            f'<circle class="a" cx="{cx}" cy="{cy}" r="{r}" fill="none" stroke="{CYAN if k % 2 == 0 else VERT}" stroke-width="7" '
+            f'stroke-linecap="round" stroke-dasharray="{tour:.1f}" stroke-dashoffset="{tour:.1f}" '
+            f'transform="rotate(-90 {cx} {cy})" style="animation-delay:{d:.2f}s"/>'
+            f'<g class="h" style="animation-delay:{d:.2f}s">{fleche(cx, cy, 30, TEXTE, 2.4)}</g>'
+            f'<g class="n" style="animation-delay:{d + 0.3:.2f}s"><text x="{x0 + 132}" y="92" font-family="{POLICE}" '
+            f'font-size="{34 if len(n) < 5 else 28}" font-weight="700" fill="{TEXTE}">{n}</text>'
+            f'<text x="{x0 + 132}" y="118" font-family="{POLICE}" font-size="14" fill="{CYAN}">{en}</text>'
+            f'<text x="{x0 + 132}" y="138" font-family="{POLICE}" font-size="12" fill="{DOUX}">{fr}</text></g>')
+    cible.write_text(
+        f'<svg xmlns="http://www.w3.org/2000/svg" width="{L}" height="{H}" viewBox="0 0 {L} {H}" role="img" '
+        f'aria-label="{valeurs["depots"]} repositories, {valeurs["langages"]} languages, {valeurs["annees"]} years, '
+        f'{valeurs["contributions"]} contributions">'
+        f'<style>.a{{animation:a 1.8s cubic-bezier(.2,.7,.2,1) forwards}}@keyframes a{{to{{stroke-dashoffset:0}}}}'
+        '.n{opacity:0;animation:n .9s ease-out forwards}@keyframes n{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}'
+        '.h{transform-box:fill-box;transform-origin:center;animation:h 6s linear infinite}@keyframes h{to{transform:rotate(360deg)}}'
+        '@media (prefers-reduced-motion:reduce){.a{animation:none;stroke-dashoffset:0}.n{animation:none;opacity:1}.h{animation:none}}</style>'
+        f'<rect width="{L}" height="{H}" rx="18" fill="{NUIT}"/>' + "".join(corps) +
+        f'<text x="{L - 16}" y="{H - 2}" text-anchor="end" font-family="{POLICE}" font-size="10" fill="{DOUX}" opacity="0.7">'
+        f'{valeurs["releve"]}</text></svg>', encoding="utf-8")
+
+
+def orbite(cible):
+    """Les outils en orbite autour d'un spin : trois anneaux qui tournent a des vitesses differentes,
+    chaque etiquette restant droite."""
+    # Les trois anneaux tournent ensemble (36 s le tour) : leurs decalages, cherches par le calcul sur
+    # 72 angles, gardent au moins 3,9 pixels entre deux etiquettes a tout instant.
+    L, H = 1000, 480
+    cx, cy = L / 2, H / 2
+    anneaux = [(80, 0.0, ["Python", "Rust", "PyTorch", "LaTeX"]),
+               (150, 3.661, ["NumPy", "SciPy", "scikit-learn", "TensorFlow", "SLURM", "Linux"]),
+               (220, 3.047, ["Docker", "Azure", "AWS", "FastAPI", "Streamlit", "Git", "Bash", "JavaScript"])]
+    duree = 36
+    import math as m
+    corps = [f'<rect width="{L}" height="{H}" rx="18" fill="{NUIT}"/>',
+             f'<circle cx="{cx}" cy="{cy}" r="235" fill="url(#halo)"/>']
+    for k, (rayon, decalage, noms) in enumerate(anneaux):
+        sens = ""
+        corps.append(f'<circle class="p" cx="{cx}" cy="{cy}" r="{rayon}" fill="none" stroke="{CYAN}" stroke-opacity="0.35" '
+                     f'stroke-dasharray="2 9" style="animation-duration:{18 + 8 * k}s;animation-direction:{"reverse" if k % 2 else "normal"}"/>')
+        etiquettes = []
+        for i, nom in enumerate(noms):
+            a = 2 * m.pi * i / len(noms) + decalage
+            x, y = cx + rayon * m.cos(a), cy + rayon * m.sin(a)
+            w = 16 + 7.4 * len(nom)
+            etiquettes.append(
+                f'<g class="e" style="animation-duration:{duree}s;animation-direction:{sens or "normal"}">'
+                f'<rect x="{x - w / 2:.1f}" y="{y - 12:.1f}" width="{w:.1f}" height="24" rx="12" fill="{ABYSSE}" '
+                f'stroke="{CYAN if k != 1 else VERT}" stroke-opacity="0.8"/>'
+                f'<text x="{x:.1f}" y="{y + 4.5:.1f}" text-anchor="middle" font-family="{POLICE}" font-size="12.5" '
+                f'font-weight="600" fill="{TEXTE}">{nom}</text></g>')
+        corps.append(f'<g class="o" style="animation-duration:{duree}s;animation-direction:{sens or "normal"}">'
+                     + "".join(etiquettes) + '</g>')
+    corps.append(f'<circle cx="{cx}" cy="{cy}" r="26" fill="{ABYSSE}" stroke="{CYAN}" stroke-width="2"/>'
+                 f'<g class="s">{fleche(cx, cy, 34, CYAN, 3)}</g>')
+    cible.write_text(
+        f'<svg xmlns="http://www.w3.org/2000/svg" width="{L}" height="{H}" viewBox="0 0 {L} {H}" role="img" aria-label="Toolbox">'
+        f'<defs><radialGradient id="halo"><stop offset="0" stop-color="{MARINE}" stop-opacity="0.7"/>'
+        f'<stop offset="1" stop-color="{NUIT}" stop-opacity="0"/></radialGradient></defs>'
+        f'<style>.o{{transform-origin:{cx}px {cy}px;animation:o linear infinite}}@keyframes o{{to{{transform:rotate(360deg)}}}}'
+        '.e{transform-box:fill-box;transform-origin:center;animation:e linear infinite}@keyframes e{to{transform:rotate(-360deg)}}'
+        '.s{transform-box:fill-box;transform-origin:center;animation:s 4s ease-in-out infinite alternate}'
+        '@keyframes s{from{transform:rotate(-25deg)}to{transform:rotate(25deg)}}'
+        f'.p{{transform-origin:{cx}px {cy}px;animation:o linear infinite}}'
+        '@media (prefers-reduced-motion:reduce){.o,.e,.s,.p{animation:none}}</style>' + "".join(corps) + '</svg>', encoding="utf-8")
+
+
 if __name__ == "__main__":
     ASSETS.mkdir(exist_ok=True)
     bandeau(ASSETS / "bandeau.svg")
     domaines()
     separateur(ASSETS / "separateur.svg")
     pied(ASSETS / "pied.svg")
+    for nom, texte, sous in (("about", "About", "Profil"), ("work", "Selected work", "Projets choisis"),
+                             ("repos", "All repositories", "Tous les dépôts"), ("toolbox", "Toolbox", "Outils"),
+                             ("activity", "Activity", "Activité"), ("kpi", "In numbers", "En chiffres")):
+        titre(ASSETS / f"titre-{nom}.svg", texte, sous)
+    import json
+    kpi(ASSETS / "kpi.svg", json.loads((ASSETS.parent / "metrics" / "kpi.json").read_text(encoding="utf-8")))
+    orbite(ASSETS / "orbite.svg")
     print("\n".join(sorted(f.name for f in ASSETS.glob("*.svg"))))

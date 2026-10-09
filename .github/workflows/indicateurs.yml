@@ -1,0 +1,30 @@
+# Les indicateurs du profil (depots, langages, annees, contributions) : releves chaque nuit par
+# outils/indicateurs.py, redessines par outils/dessiner.py, puis commites. Demande METRICS_TOKEN.
+name: Indicateurs du profil
+on:
+  schedule:
+    - cron: "5 4 * * *"
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  indicateurs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Relever et redessiner
+        env:
+          METRICS_TOKEN: ${{ secrets.METRICS_TOKEN }}
+        run: |
+          python3 outils/indicateurs.py
+          python3 outils/dessiner.py
+      - name: Commiter si quelque chose a change
+        run: |
+          git config user.name "Brice Kengni Zanguim"
+          git config user.email "kenzabri2@yahoo.com"
+          git add metrics/kpi.json assets/kpi.svg
+          git diff --cached --quiet || git commit -m "Indicateurs du $(date +%F)"
+          git push
