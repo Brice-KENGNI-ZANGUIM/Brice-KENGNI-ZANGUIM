@@ -2,12 +2,12 @@
      les deux workflows de .github/workflows ; voir INSTALLATION.md. -->
 
 <p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0B1220,55:1E3A8A,100:22D3EE&height=190&section=header&text=Brice%20Kengni%20Zanguim&fontSize=44&fontColor=E8ECF3&fontAlignY=36&desc=Physique%20quantitative%20%7C%20Intelligence%20artificielle%20%7C%20Logiciel&descSize=17&descAlignY=58&animation=fadeIn" alt="Brice Kengni Zanguim" width="100%"/>
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0B1220,55:1E3A8A,100:22D3EE&height=190&section=header&text=Brice%20Kengni%20Zanguim&fontSize=44&fontColor=E8ECF3&fontAlignY=36&desc=Magn%C3%A9tisme%20quantique%20%7C%20Machine%20learning&descSize=17&descAlignY=58&animation=fadeIn" alt="Brice Kengni Zanguim" width="100%"/>
 </p>
 
 <p align="center">
   <a href="https://github.com/Brice-KENGNI-ZANGUIM">
-    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=21&duration=3200&pause=900&color=22D3EE&center=true&vCenter=true&width=760&lines=Doctorant+en+physique+du+magn%C3%A9tisme;Ing%C3%A9nieur+en+intelligence+artificielle;Python+%7C+PyTorch+%7C+Rust+%7C+LaTeX;Calcul+intensif+DFT+sur+grappes+SLURM;Des+mod%C3%A8les+exacts%2C+mesur%C3%A9s%2C+mis+en+production" alt="Présentation animée"/>
+    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=21&duration=3200&pause=900&color=22D3EE&center=true&vCenter=true&width=760&lines=Magn%C3%A9tisme+quantique;Machine+learning+pour+la+physique;DFT%2C+mod%C3%A8les+de+Heisenberg%2C+couplages+d%27%C3%A9change;PyTorch+%7C+Python+%7C+Rust+%7C+SLURM;Des+mod%C3%A8les+exacts%2C+mesur%C3%A9s%2C+reproductibles" alt="Présentation animée"/>
   </a>
 </p>
 
@@ -22,26 +22,28 @@
 
 ### Profil
 
-Physicien de formation, je prépare un doctorat sur le magnétisme des manganites RMnO3 : calculs DFT
-en symétrie brisée, modèles de Heisenberg, et campagnes de calcul massives sur grappes SLURM.
+Mon travail porte sur le magnétisme quantique et le machine learning.
 
-En parallèle, je conçois des logiciels complets, de la modélisation à la mise en production : vision par
-ordinateur, systèmes de recommandation, agents conversationnels, analyse de données et outils
-scientifiques. J'écris en Python et en Rust, je documente en LaTeX, et je mesure chaque résultat avant de l'annoncer.
+Côté physique, j'étudie le magnétisme des manganites RMnO3 : calculs DFT en symétrie brisée,
+extraction des couplages d'échange, modèles de Heisenberg, et campagnes de calcul massives sur grappes SLURM.
+
+Côté machine learning, je construis des modèles d'apprentissage profond avec PyTorch, pour la physique
+comme pour l'image, le texte et la donnée, de l'entraînement jusqu'à la mise en production. Chaque
+résultat est mesuré avant d'être annoncé.
 
 <table>
   <tr>
     <td width="33%" valign="top">
-      <b>Physique numérique</b><br/>
-      DFT, symétrie brisée, hamiltoniens de Heisenberg, couplages d'échange, calcul intensif.
+      <b>Magnétisme quantique</b><br/>
+      Hamiltoniens de spin, modèles de Heisenberg, couplages d'échange, manganites RMnO3.
     </td>
     <td width="33%" valign="top">
-      <b>Intelligence artificielle</b><br/>
-      Apprentissage profond (PyTorch), segmentation d'images, NLP, recommandation, agents.
+      <b>Machine learning</b><br/>
+      Apprentissage profond (PyTorch), vision par ordinateur, NLP, modèles pour la physique.
     </td>
     <td width="33%" valign="top">
-      <b>Ingénierie logicielle</b><br/>
-      Python, Rust, API, conteneurs, CI/CD, déploiement en nuage, interfaces Streamlit.
+      <b>Calcul scientifique</b><br/>
+      DFT en symétrie brisée, calcul intensif SLURM, Python, Rust, chaînes reproductibles.
     </td>
   </tr>
 </table>
